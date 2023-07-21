@@ -1,53 +1,11 @@
 <script setup>
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 </script>
 <template>
+<AuthenticatedLayout>
   <div class="flex flex-col h-screen bg-gradient-to-br from-blue-500 to-pink-600">
-    <header class="shrink-0 flex justify-between bg-white px-4 py-3">
-      <a class="text-3xl font-black tracking-tight text-indigo-600" href="/">Work Management</a>
-      <nav>
-        <a class="text-sm font-medium px-3 py-2 rounded-md hover:bg-gray-100" href="#">My Boards</a>
-        <button class="ml-3">
-          <Menu as="div" class="relative z-10">
-
-            <MenuButton class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black rounded-full">
-
-              <img class="w-10 h-10 inline rounded-full"
-                src="https://i.ibb.co/7G8fhHS/Whats-App-Image-2023-05-06-at-12-27-47-AM-1.jpg" alt="">
-
-            </MenuButton>
-
-
-
-            <transition enter-active-class="transition transform duration-100 ease-out"
-              enter-from-class="opacity-0 scale-90" enter-to-class="opacity-100 scale-100"
-              leave-active-class="transition transform duration-100 ease-in" leave-from-class="opacity-100 scale-100"
-              leave-to-class="opacity-0 scale-90">
-
-              <MenuItems
-                class="origin-top-right mt-2 focus:outline-none absolute right-0 bg-white overflow-hidden rounded-md shadow-lg border w-48">
-
-                <MenuItem v-slot="{ active }">
-
-                <a href="#" :class="{ 'bg-gray-100': active }" class="block px-4 py-2 text-sm text-gray-700">My Profile</a>
-
-                </MenuItem>
-
-                <MenuItem v-slot="{ active }">
-
-                <a href="#" :class="{ 'bg-gray-100': active }" class="block px-4 py-2 text-sm text-gray-700">Log out</a>
-
-                </MenuItem>
-
-              </MenuItems>
-
-            </transition>
-
-          </Menu>
-        </button>
-      </nav>
-    </header>
-
+ 
     <main class="flex-1 overflow-hidden">
       <div class="flex flex-col h-full">
         <div class="shrink-0 flex justify-between items-center p-4 b from-purple-700 to-pink-800 rounded-t-lg">
@@ -185,4 +143,5 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
       </div>
     </main>
   </div>
+</AuthenticatedLayout>
 </template>
